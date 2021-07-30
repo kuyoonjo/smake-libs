@@ -1,4 +1,6 @@
 export function addLibs(target: any, ...libs: Function[]) {
+  const name = target.name;
+  console.log('name:', name);
   for (const lib of libs) {
     target = class extends target {
       constructor() {
@@ -7,5 +9,10 @@ export function addLibs(target: any, ...libs: Function[]) {
       }
     };
   }
+  delete target.name;
+  Object.defineProperty(target, 'name', {
+    value: name,
+    configurable: true,
+  });
   return target;
 }
