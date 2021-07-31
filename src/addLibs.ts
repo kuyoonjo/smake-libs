@@ -1,6 +1,5 @@
 export function addLibs(target: any, ...libs: Function[]) {
   const name = target.name;
-  console.log('name:', name);
   for (const lib of libs) {
     target = class extends target {
       constructor() {
