@@ -1,6 +1,6 @@
 import { addLibs } from '../src/addLibs';
 
-test('Should greet with message', () => {
+test('addLibs', () => {
   class A {}
   function f(a: any) {
     a.a = 'a';
