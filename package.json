@@ -1,6 +1,6 @@
 {
   "name": "@smake/libs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "SMake thirdparty libraries support",
   "license": "MIT",
   "repository": "https://github.com/kuyoonjo/smake-libs.git",
