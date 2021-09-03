@@ -1,18 +1,12 @@
-export function addFrameworks(target: any, ...fws: any[]) {
-  const name = target.name;
-  for (const fw of fws) {
-    target = class extends target {
-      constructor() {
-        super();
-        const o = new fw();
-        o.framework(this);
-      }
-    };
-  }
-  delete target.name;
-  Object.defineProperty(target, 'name', {
-    value: name,
-    configurable: true,
-  });
-  return target;
+import { deprecate } from 'util';
+import { addLibs } from './addLibs';
+import { framework } from './Framework';
+
+function _addFrameworks(target: any, ...fws: any[]) {
+  return addLibs(target, ...fws.map(framework));
 }
+
+export const addFrameworks = deprecate(
+  _addFrameworks,
+  'addFrameworks(...args) is deprecated. Use addLibs(...framework(arg)) instead.'
+);

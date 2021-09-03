@@ -1,6 +1,6 @@
 {
   "name": "@smake/libs",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "SMake thirdparty libraries support",
   "license": "MIT",
   "repository": "https://github.com/kuyoonjo/smake-libs.git",
@@ -35,7 +35,7 @@
     "watch:test": "jest --watch"
   },
   "dependencies": {
-    "smake": "^0.3.12"
+    "smake": "^0.4.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
